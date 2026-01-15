@@ -47,73 +47,104 @@ table {
 	border-spacing: 0;
 }
 
-/* Global Acid Theme Setup */
+
+/* BODY & GLOBALS */
 body {
   margin: 0;
-  font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
-  background: radial-gradient(circle at center, #ff00ff, #00ffff);
-  color: #111;
-  animation: backgroundShift 20s infinite linear;
+  font-family: 'Courier New', monospace;
+  background: repeating-linear-gradient(
+    45deg,
+    #f0f,
+    #f0f 10px,
+    #0ff 10px,
+    #0ff 20px
+  );
+  color: #000;
+  animation: bgShift 10s linear infinite;
 }
 
-@keyframes backgroundShift {
+@keyframes bgShift {
   0% { background-position: 0 0; }
-  100% { background-position: 100% 100%; }
+  100% { background-position: 100px 100px; }
 }
 
 h1, h2 {
-  font-family: 'Impact', fantasy;
-  color: #00ff00;
-  text-shadow: 2px 2px #ff0000;
+  font-family: 'Press Start 2P', cursive;
+  color: #fffb00;
+  text-shadow: 3px 3px #00f;
   transform: rotate(-1deg);
 }
 
+/* Random Vibe Typography */
 p, li {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  color: #000000;
-  background-color: rgba(255, 255, 0, 0.4);
-  padding: 0.5rem;
-  border-radius: 5px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-left: 5px solid #ff00ff;
+  transform: skew(-1deg);
 }
 
-/* Layout Flex Vibe */
+/* Acid-Licious Buttons */
+a#primary-button, a#cta-button {
+  background: linear-gradient(135deg, #00f6ff, #ff00c8, #ffef00);
+  padding: 1rem 2rem;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  border: 4px double #000;
+  box-shadow: 5px 5px 0 #000;
+  transform: rotate(-3deg);
+  transition: transform 0.2s, box-shadow 0.3s;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+a#primary-button:hover, a#cta-button:hover {
+  transform: rotate(3deg) scale(1.1);
+  box-shadow: -5px -5px 0 #f0f;
+}
+
+/* Layout */
 #layout {
   display: grid;
   grid-template-areas:
-    "top-left top-right"
-    "center-hero center-hero"
-    "bottom-left bottom-right";
+    "top-left center-hero top-right"
+    "bottom-left center-hero bottom-right";
+  grid-template-columns: 1fr 2fr 1fr;
   gap: 2rem;
-  padding: 2rem;
+  padding: 3rem;
 }
 
-#top-left     { grid-area: top-left; }
-#top-right    { grid-area: top-right; }
-#center-hero  { grid-area: center-hero; text-align: center; }
-#bottom-left  { grid-area: bottom-left; }
-#bottom-right { grid-area: bottom-right; }
+#top-left     { grid-area: top-left; background: #ffff00; padding: 1rem; }
+#top-right    { grid-area: top-right; background: #00fffb; padding: 1rem; }
+#center-hero  { grid-area: center-hero; background: #ff00ff; padding: 3rem; text-align: center; border: 5px dashed #000; }
+#bottom-left  { grid-area: bottom-left; background: #ff8900; padding: 1rem; }
+#bottom-right { grid-area: bottom-right; background: #7aff00; padding: 1rem; }
 
-/* Buttons */
-#primary-button, #cta-button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background: linear-gradient(45deg, #ff00ff, #00ff00, #0000ff);
+/* Glitch Text Effect */
+#center-hero h1 {
+  position: relative;
   color: #fff;
-  text-decoration: none;
-  border: 3px dashed #000;
-  border-radius: 15px;
-  box-shadow: 5px 5px 0 #000;
-  transform: rotate(-2deg);
-  transition: transform 0.2s, box-shadow 0.2s;
+  font-size: 2rem;
 }
-
-#primary-button:hover, #cta-button:hover {
-  transform: rotate(2deg) scale(1.1);
-  box-shadow: 3px 3px 0 #ff0000;
+#center-hero h1::before,
+#center-hero h1::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+#center-hero h1::before {
+  color: #0ff;
+  top: -2px;
+  left: 2px;
+}
+#center-hero h1::after {
+  color: #f0f;
+  top: 2px;
+  left: -2px;
 }
 
 /* Footer */
@@ -121,16 +152,16 @@ p, li {
   text-align: center;
   padding: 2rem;
   background: #000;
-  color: #0f0;
-  font-family: monospace;
+  color: #ff0;
+  font-family: 'Lucida Console', monospace;
+  font-size: 0.9rem;
 }
 
-/* Responsive Feel */
+/* Mobile Madness */
 @media (max-width: 768px) {
   #layout {
     display: block;
   }
-
   section {
     margin-bottom: 2rem;
   }
