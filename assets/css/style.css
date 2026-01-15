@@ -47,95 +47,71 @@ table {
 	border-spacing: 0;
 }
 
-/* Font Setup */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap');
-
 body {
-  margin: 0;
+  background: #fefefe;
+  color: #111;
   font-family: 'Space Mono', monospace;
-  background: #fafafa;
-  color: #1a1a1a;
-  padding: 2rem;
+  padding: 3rem 2rem;
   line-height: 1.6;
 }
 
-/* Layout Grid */
-#layout {
-  display: grid;
-  grid-template-areas:
-    "top-left top-right"
-    "center-hero center-hero"
-    "bottom-left bottom-right";
-  gap: 2rem;
-}
-
 section {
+  max-width: 700px;
+  margin-bottom: 4rem;
   padding: 2rem;
-  background: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  background: #fff;
+  border-left: 6px solid #ff00ff;
+  box-shadow: 4px 4px 0 #000;
+  transform: rotate(-0.5deg);
 }
 
-/* Section Titles */
 h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 0.6rem;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
   color: #111;
   background: #000;
   color: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-}
-
-/* Hero */
-#center-hero {
-  grid-area: center-hero;
-  background: #ff66cc;
-  color: #fff;
-  text-align: center;
-  border-radius: 8px;
-  border: 1px solid #000;
-  padding: 3rem;
-  transition: transform 0.3s ease;
-}
-#center-hero:hover {
-  transform: scale(1.02);
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
 }
 
 h1 {
+  font-size: 2.8rem;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0 0 1rem 0;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-/* Buttons */
 a#primary-button,
 a#cta-button {
   display: inline-block;
   margin-top: 1rem;
-  padding: 1rem 2rem;
-  font-family: 'Space Mono', monospace;
   font-size: 1.2rem;
-  text-decoration: none;
-  background: #00d1ff;
-  color: #000;
-  border: 2px solid #000;
-  border-radius: 6px;
   font-weight: bold;
-  transition: background 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  color: #000;
+  padding: 1rem 2rem;
+  background: #00ffee;
+  border: 3px solid #000;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
 a#primary-button:hover,
 a#cta-button:hover {
-  background: #0077cc;
-  color: #fff;
-  transform: translateY(-3px);
+  background: #000;
+  color: #00ffee;
+  transform: scale(1.03) rotate(1deg);
 }
 
-/* Hidden CTA Section */
+#center-hero {
+  text-align: center;
+  background: #fff0fe;
+  border: 2px dashed #ff00ff;
+  padding: 3rem;
+}
+
 #bottom-right {
   display: none;
   opacity: 0;
@@ -146,14 +122,12 @@ a#cta-button:hover {
   opacity: 1;
 }
 
-/* Footer Style */
 #footer {
-  text-align: center;
-  margin-top: 4rem;
-  padding: 1.5rem;
-  font-family: 'Space Mono', monospace;
+  font-family: monospace;
   font-size: 0.9rem;
-  background: #000;
-  color: #0f0;
-  border-radius: 6px;
+  text-align: center;
+  color: lime;
+  background: #111;
+  padding: 1.5rem;
+  margin-top: 5rem;
 }
