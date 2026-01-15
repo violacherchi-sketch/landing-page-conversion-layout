@@ -1,1 +1,120 @@
+/* General reset-ish */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Courier New', monospace;
+  background: #fffef3;
+  color: #2e2e2e;
+  line-height: 1.6;
+  padding: 40px;
+}
+
+/* Layout weirdness begins */
+
+#hero {
+  background: #ff00aa;
+  color: #fff;
+  padding: 120px 60px;
+  text-align: left;
+  max-width: 700px;
+  margin-bottom: 80px;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+#primary-button {
+  background: #00ffcc;
+  color: #000;
+  padding: 14px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  display: inline-block;
+  transform: rotate(-1.5deg);
+}
+
+/* Section structure */
+section {
+  margin-bottom: 100px;
+  padding: 40px;
+  background: #f8f9fa;
+  border-left: 8px solid #e7e7e7;
+  max-width: 700px;
+}
+
+section:nth-of-type(even) {
+  background: #d2ffe6;
+  border-left-color: #00ffcc;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #1c1c1c;
+}
+
+section p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+/* List styling with subtle weird */
+#layout-stuff ul {
+  list-style: square;
+  margin-left: 20px;
+}
+
+#layout-stuff li {
+  margin-bottom: 10px;
+}
+
+/* The “Call to Action” section */
+#somewhere {
+  background: #000;
+  color: #fff;
+  padding: 80px 40px;
+}
+
+#somewhere h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#cta-button {
+  background: #ffef00;
+  color: #000;
+  padding: 16px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: inline-block;
+  margin-top: 30px;
+  border: 3px dashed #000;
+  transform: rotate(0.7deg);
+}
+
+/* Footer */
+#footer {
+  text-align: center;
+  padding: 60px 20px;
+  color: #444;
+  font-size: 0.9rem;
+  background: #fffef3;
+  border-top: 2px solid #eee;
+  max-width: 100%;
+}
