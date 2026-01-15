@@ -1,10 +1,12 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const ctaBtn = document.getElementById("cta-button");
-  const hiddenSection = document.getElementById("bottom-right");
+document.addEventListener("DOMContentLoaded", () => {
+  const revealSection = document.getElementById("bottom-right");
+  const ctaBtn = document.getElementById("primary-button");
 
-  ctaBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    hiddenSection.classList.add("visible");
-    ctaBtn.style.display = "none"; // Optional: Hide the CTA button
-  });
+  if (ctaBtn && revealSection) {
+    ctaBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      revealSection.classList.add("visible");
+      ctaBtn.style.display = "none"; // hide button after click
+    });
+  }
 });
