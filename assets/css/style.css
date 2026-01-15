@@ -1,4 +1,4 @@
-/* General reset-ish */
+/* Reset-ish */
 * {
   margin: 0;
   padding: 0;
@@ -7,114 +7,128 @@
 
 body {
   font-family: 'Courier New', monospace;
-  background: #fffef3;
-  color: #2e2e2e;
-  line-height: 1.6;
-  padding: 40px;
+  background: #fcfaee;
+  color: #1e1e1e;
+  line-height: 1.7;
+  padding: 80px 40px;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
-/* Layout weirdness begins */
-
+/* --- Hero --- */
 #hero {
-  background: #ff00aa;
+  background: #ff0099;
   color: #fff;
-  padding: 120px 60px;
-  text-align: left;
-  max-width: 700px;
-  margin-bottom: 80px;
+  padding: 100px 60px;
+  margin-bottom: 100px;
+  border-left: 12px solid #00ffe7;
 }
 
 #hero h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 20px;
-  line-height: 1;
 }
 
 #hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  max-width: 500px;
+  font-size: 1.25rem;
+  max-width: 550px;
+  margin-bottom: 40px;
 }
 
 #primary-button {
-  background: #00ffcc;
+  background: #00ffe7;
   color: #000;
-  padding: 14px 24px;
+  padding: 14px 28px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   display: inline-block;
-  transform: rotate(-1.5deg);
+  box-shadow: 2px 2px 0 #000;
+  transition: background 0.3s ease;
 }
 
-/* Section structure */
+#primary-button:hover {
+  background: #04f7e1;
+}
+
+/* --- Section base --- */
 section {
   margin-bottom: 100px;
-  padding: 40px;
-  background: #f8f9fa;
-  border-left: 8px solid #e7e7e7;
-  max-width: 700px;
+  padding: 60px;
+  background: #f0f0f0;
+  border-left: 10px solid #ccc;
 }
 
 section:nth-of-type(even) {
-  background: #d2ffe6;
-  border-left-color: #00ffcc;
+  background: #d0fff1;
+  border-left-color: #00ffe7;
 }
 
 section h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 20px;
-  color: #1c1c1c;
 }
 
 section p {
-  margin-bottom: 20px;
   font-size: 1rem;
+  margin-bottom: 20px;
+  max-width: 600px;
 }
 
-/* List styling with subtle weird */
+/* --- List section --- */
 #layout-stuff ul {
-  list-style: square;
   margin-left: 20px;
+  list-style-type: square;
 }
 
 #layout-stuff li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-/* The “Call to Action” section */
+/* --- CTA section --- */
 #somewhere {
-  background: #000;
-  color: #fff;
-  padding: 80px 40px;
+  background: #111;
+  color: #eee;
+  padding: 100px 60px;
+  border-left: 10px solid #ffef00;
 }
 
 #somewhere h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 20px;
+}
+
+#somewhere p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
 }
 
 #cta-button {
   background: #ffef00;
   color: #000;
-  padding: 16px 30px;
-  text-decoration: none;
+  padding: 16px 36px;
   font-weight: bold;
-  font-size: 1.1rem;
-  display: inline-block;
-  margin-top: 30px;
-  border: 3px dashed #000;
-  transform: rotate(0.7deg);
+  font-size: 1rem;
+  text-decoration: none;
+  border: 2px dotted #000;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 #000;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
-/* Footer */
+#cta-button:hover {
+  transform: translateY(-2px);
+  background: #fff100;
+}
+
+/* --- Footer --- */
 #footer {
   text-align: center;
-  padding: 60px 20px;
+  font-size: 0.85rem;
+  padding: 80px 20px 0;
   color: #444;
-  font-size: 0.9rem;
-  background: #fffef3;
-  border-top: 2px solid #eee;
-  max-width: 100%;
+  border-top: 1px solid #ddd;
+  margin-top: 120px;
 }
