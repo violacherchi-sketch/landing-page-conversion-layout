@@ -49,66 +49,56 @@ table {
 
 
 body {
-  margin: 0;
   font-family: 'Courier New', monospace;
-  background: linear-gradient(to right, #00f0ff, #ff00f0);
-  color: #222;
+  background: #fdfdfd;
   padding: 2rem;
+  color: #111;
 }
 
-#layout {
-  display: grid;
-  grid-template-areas:
-    "top-left top-right"
-    "center-hero center-hero"
-    "bottom-left bottom-right";
-  gap: 2rem;
+h2 {
+  font-size: 1.5rem;
+  background: #000;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  display: inline-block;
+  margin-bottom: 1rem;
 }
-
-#top-left     { grid-area: top-left; }
-#top-right    { grid-area: top-right; }
-#center-hero  { grid-area: center-hero; }
-#bottom-left  { grid-area: bottom-left; }
-#bottom-right { grid-area: bottom-right; }
 
 section {
-  padding: 2rem;
-  border-radius: 12px;
-  background: linear-gradient(to bottom right, #ffe5f7, #cafffb);
-  color: #222;
-  box-shadow: 0 0 0 3px #ff00ff, 8px 8px 0 #000;
-  max-width: 600px;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #fffcf5;
+  border: 2px solid #222;
+  border-radius: 10px;
 }
 
 #center-hero {
   background: #ff00ff;
-  color: #fff;
+  color: white;
   text-align: center;
-  padding: 3rem;
-  border-radius: 20px;
-  box-shadow: 5px 5px 0 #000;
 }
 
 #primary-button, #cta-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
   background: #00ffff;
   color: #000;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 1rem 2rem;
-  text-decoration: none;
   border: 3px solid #000;
-  border-radius: 10px;
-  box-shadow: 3px 3px 0 #000;
-  transition: transform 0.2s ease;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
 }
+
 #primary-button:hover, #cta-button:hover {
-  transform: scale(1.05);
+  background: #000;
+  color: #00ffff;
 }
 
 #bottom-right {
   display: none;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
 }
 #bottom-right.visible {
   display: block;
@@ -118,19 +108,7 @@ section {
 #footer {
   background: #000;
   color: #0f0;
-  font-family: monospace;
-  padding: 1.5rem;
   text-align: center;
-  font-size: 0.9rem;
-}
-
-@media (max-width: 768px) {
-  #layout {
-    display: block;
-  }
-
-  section {
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
+  padding: 1rem;
+  font-family: monospace;
 }
