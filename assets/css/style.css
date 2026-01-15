@@ -47,59 +47,76 @@ table {
 	border-spacing: 0;
 }
 
-
+/* General Layout */
 body {
+  margin: 0;
   font-family: 'Courier New', monospace;
-  background: #fdfdfd;
-  padding: 2rem;
+  background: #fff8fc;
   color: #111;
+  padding: 2rem;
+}
+
+#layout {
+  display: grid;
+  grid-template-areas:
+    "top-left top-right"
+    "center-hero center-hero"
+    "bottom-left bottom-right";
+  gap: 2rem;
+}
+
+#top-left     { grid-area: top-left; }
+#top-right    { grid-area: top-right; }
+#center-hero  { grid-area: center-hero; }
+#bottom-left  { grid-area: bottom-left; }
+#bottom-right { grid-area: bottom-right; }
+
+section {
+  padding: 2rem;
+  border-radius: 10px;
+  background: #f0f0f0;
+  box-shadow: 4px 4px 0 #000;
+  max-width: 600px;
 }
 
 h2 {
-  font-size: 1.5rem;
   background: #000;
   color: #fff;
-  padding: 0.3rem 0.6rem;
+  padding: 0.4rem 0.8rem;
   display: inline-block;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
-}
-
-section {
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: #fffcf5;
-  border: 2px solid #222;
-  border-radius: 10px;
 }
 
 #center-hero {
   background: #ff00ff;
-  color: white;
+  color: #fff;
   text-align: center;
 }
 
 #primary-button, #cta-button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 1rem 2rem;
   background: #00ffff;
   color: #000;
-  border: 3px solid #000;
-  border-radius: 5px;
-  text-decoration: none;
+  font-size: 1.1rem;
   font-weight: bold;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border: 3px solid #000;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 #000;
+  transition: transform 0.2s ease;
 }
 
 #primary-button:hover, #cta-button:hover {
-  background: #000;
-  color: #00ffff;
+  transform: scale(1.05);
 }
 
 #bottom-right {
   display: none;
   opacity: 0;
-  transition: opacity 0.6s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
+
 #bottom-right.visible {
   display: block;
   opacity: 1;
@@ -109,6 +126,13 @@ section {
   background: #000;
   color: #0f0;
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem;
+  font-size: 0.9rem;
   font-family: monospace;
+}
+
+@media (max-width: 768px) {
+  #layout {
+    display: block;
+  }
 }
